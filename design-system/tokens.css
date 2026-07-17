@@ -1,0 +1,61 @@
+/* Design system extraído de drogariamedfarmapalmas.com.br
+   Fonte/espaçamentos: skill extract-design-system (Playwright)
+   Cores: extraídas do CSS do kit Elementor (post-13.css) + computed styles
+
+   Referência de estilo apenas — conteúdo, marca e imagens são próprios. */
+
+:root {
+  /* ---- Tipografia ---- */
+  --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --fw-heading: 800; /* títulos são bem pesados no original */
+  --fw-body: 400;
+
+  /* ---- Cores de marca ---- */
+  --color-primary: #19619c;        /* azul principal (títulos, faixas) */
+  --color-primary-dark: #103b5f;   /* azul escuro, fim do gradiente */
+  --color-primary-deep: #041225;   /* navy quase preto, textos fortes */
+  --color-primary-soft: #5f8fb4;   /* azul dessaturado das barras do FAQ */
+
+  --color-accent: #e93238;         /* vermelho dos botões de CTA */
+  --color-accent-soft: #ef7b80;    /* vermelho claro dos botões dos cards */
+  --color-whatsapp: #25d366;       /* botão flutuante do WhatsApp */
+
+  /* ---- Neutros ---- */
+  --color-ink: #0c0d0e;            /* texto principal */
+  --color-body: #706f6f;           /* texto de corpo, cinza */
+  --color-muted: #9da5ae;
+  --color-border: #d6d5d5;
+  --color-surface: #ffffff;
+  --color-bg-tint: #f2f8fd;        /* faixa azul claríssima alternada */
+  --color-bg-tint-2: #f6f9fa;
+
+  --gradient-band: linear-gradient(180deg, #19619c 0%, #103b5f 100%);
+  --hero-overlay: linear-gradient(90deg, rgba(4, 18, 37, 0.72) 0%, rgba(4, 18, 37, 0.15) 60%, transparent 100%);
+
+  /* ---- Espaçamento (escala real do site) ---- */
+  --space-1: 3px;
+  --space-2: 5px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 15px;
+  --space-7: 16px;
+  --space-8: 20px;
+  --space-9: 24px;
+  --space-10: 30px;
+  --space-11: 32px;
+  --space-12: 40px;
+  --space-13: 52px;
+  --space-14: 80px;
+
+  /* ---- Raio e sombra ---- */
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --radius-sm: 6px;
+  --shadow-card: 0 4px 18px rgba(4, 18, 37, 0.07);
+  --shadow-cta: 0 6px 18px rgba(233, 50, 56, 0.28);
+
+  /* ---- Layout ---- */
+  --container: 1140px;
+}

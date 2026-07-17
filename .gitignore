@@ -1,0 +1,10 @@
+# Ferramentas e artefatos de extração (não fazem parte do site)
+.agents/
+.claude/
+.extract-design-system/
+skills-lock.json
+node_modules/
+
+# Sistema
+Thumbs.db
+.DS_Store

@@ -1,0 +1,450 @@
+/* Drogaria Santa Mônica — estilo baseado nos tokens em design-system/tokens.css */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: var(--fw-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-body);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading);
+  color: var(--color-ink);
+  line-height: 1.15;
+  margin: 0 0 var(--space-8);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-8);
+}
+.container--narrow { max-width: 860px; }
+
+/* ---------------- Botões ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-10);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-accent);
+  box-shadow: var(--shadow-cta);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+.btn--soft {
+  background: var(--color-accent-soft);
+  box-shadow: none;
+  padding-inline: var(--space-8);
+  white-space: nowrap;
+}
+.btn__icon { width: 20px; height: 20px; flex: none; }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--hero-overlay);
+}
+.hero__inner { padding-block: var(--space-14); max-width: 1140px; }
+.hero__logo { display: inline-block; margin-bottom: var(--space-10); }
+.hero__logo img { width: 104px; height: auto; }
+
+.hero__title {
+  color: #fff;
+  font-size: clamp(2.4rem, 5.2vw, 3.6rem);
+  max-width: 12ch;
+  margin-bottom: var(--space-10);
+}
+.hero__lead {
+  color: rgba(250, 250, 250, .9);
+  max-width: 46ch;
+  margin: 0 0 var(--space-8);
+  font-size: 17px;
+}
+.hero .btn--cta { margin-top: var(--space-6); }
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+.rating__score {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: #fff;
+}
+.rating__stars { color: #f5a623; letter-spacing: 2px; font-size: 15px; }
+.rating__meta p {
+  margin: 2px 0 0;
+  color: rgba(250, 250, 250, .85);
+  font-size: 14px;
+  line-height: 1.35;
+}
+.rating__lead {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px !important;
+}
+.hero__note {
+  margin-top: var(--space-8);
+  color: rgba(250, 250, 250, .8);
+  font-size: 15px;
+}
+.hero__note a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.hero__note a:hover { border-bottom-color: #fff; }
+
+/* ---------------- Faixa Farmácia Popular ---------------- */
+.popular { background: var(--color-surface); padding-block: var(--space-12); }
+.popular__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-10);
+  background: var(--color-bg-tint);
+  border: 1px solid #cfe2f2;
+  border-radius: var(--radius-card);
+  padding: var(--space-10) var(--space-11);
+}
+.popular__flag {
+  width: 58px;
+  height: auto;
+  flex: none;
+  filter: drop-shadow(0 2px 5px rgba(4, 18, 37, .18));
+}
+.popular__title {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.popular__text { margin: 0; font-size: 15.5px; }
+.popular__text strong { color: var(--color-primary-deep); }
+
+/* ---------------- Seções ---------------- */
+.section { padding-block: var(--space-14); background: var(--color-surface); }
+.section--tint { background: var(--color-bg-tint); }
+
+.section__kicker {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--color-primary-deep);
+  text-align: center;
+  margin-bottom: var(--space-9);
+}
+.section__title {
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  text-align: center;
+  margin-bottom: var(--space-9);
+}
+.section__title--left { text-align: left; }
+.section__intro {
+  text-align: center;
+  max-width: 72ch;
+  margin: 0 auto var(--space-12);
+  color: var(--color-body);
+}
+.section__intro a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.section__cta { text-align: center; margin-top: var(--space-12); }
+
+/* ---------------- Cards de serviço ---------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-10);
+}
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card__img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.card__body {
+  padding: var(--space-10);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card__title {
+  color: var(--color-primary);
+  font-size: 1.12rem;
+  margin-bottom: var(--space-6);
+}
+.card__text { margin: 0 0 var(--space-10); font-size: 15.5px; flex: 1; }
+.card .btn { align-self: center; }
+
+/* ---------------- Categorias (linhas largas) ---------------- */
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-11);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-10) var(--space-11);
+}
+.feature__icon {
+  width: 68px;
+  height: 68px;
+  flex: none;
+  color: var(--color-primary-dark);
+  /* CSS vence o atributo stroke-width do SVG — mantém o traço uniforme entre os ícones */
+  stroke-width: 2.2;
+}
+.feature h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary-deep);
+  margin-bottom: var(--space-4);
+}
+.feature p { margin: 0; font-size: 15.5px; }
+
+/* ---------------- Faixa azul ---------------- */
+.band {
+  background: var(--gradient-band);
+  padding-block: var(--space-14);
+  text-align: center;
+}
+.band__title {
+  color: #fff;
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  margin-bottom: var(--space-9);
+}
+.band__text {
+  color: rgba(240, 242, 244, .85);
+  max-width: 70ch;
+  margin: 0 auto var(--space-12);
+}
+.band__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-10);
+  max-width: 900px;
+  margin-inline: auto;
+}
+.stat {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius-card);
+  padding: var(--space-9);
+}
+.stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+.stat span { color: rgba(240, 242, 244, .8); font-size: 14.5px; }
+
+/* ---------------- Bairros ---------------- */
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+}
+.chips li {
+  background: var(--color-bg-tint);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-pill);
+  padding: var(--space-4) var(--space-9);
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+/* ---------------- Sobre ---------------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-14);
+  align-items: center;
+}
+.about__media img { border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+.about__body p { margin: 0 0 var(--space-8); }
+.about__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  margin-top: var(--space-10);
+}
+.about__rating strong {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.about__rating p { margin: 0; font-size: 14.5px; }
+.about__hours {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-7);
+  color: var(--color-primary-deep);
+}
+
+/* ---------------- FAQ ---------------- */
+.faq { display: flex; flex-direction: column; gap: var(--space-4); }
+.faq__item { border-radius: var(--radius-sm); overflow: hidden; }
+.faq__item summary {
+  background: var(--color-primary-soft);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15.5px;
+  padding: var(--space-6) var(--space-9);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  flex: none;
+}
+.faq__item[open] summary::after { content: "–"; }
+.faq__item summary:hover { filter: brightness(1.06); }
+.faq__item summary:focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: -3px; }
+.faq__answer { background: var(--color-bg-tint-2); padding: var(--space-8) var(--space-9); }
+.faq__answer p { margin: 0; font-size: 15.5px; }
+
+/* ---------------- Rodapé ---------------- */
+.footer { background: var(--color-primary-deep); color: rgba(240, 242, 244, .8); }
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  padding-block: var(--space-14);
+}
+.footer h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: var(--space-6);
+}
+.footer p { margin: 0; font-size: 15px; }
+.footer__logo { width: 84px; height: auto; margin-bottom: var(--space-8); }
+.footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .3); }
+.footer a:hover { border-bottom-color: #fff; }
+.footer__bar { border-top: 1px solid rgba(255, 255, 255, .12); padding-block: var(--space-8); }
+.footer__bar p { font-size: 13.5px; text-align: center; }
+
+/* ---------------- WhatsApp flutuante ---------------- */
+.wa-float {
+  position: fixed;
+  right: var(--space-9);
+  bottom: var(--space-9);
+  z-index: 50;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+  transition: transform .15s ease;
+}
+.wa-float:hover { transform: scale(1.07); }
+.wa-float svg { width: 34px; height: 34px; }
+
+/* ---------------- Responsivo ---------------- */
+@media (max-width: 900px) {
+  .about { grid-template-columns: 1fr; gap: var(--space-11); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-11); }
+  .popular__inner {
+    grid-template-columns: auto 1fr;
+    row-gap: var(--space-8);
+  }
+  .popular__inner .btn { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero { min-height: auto; }
+  .hero::before { background: linear-gradient(180deg, rgba(4, 18, 37, .82) 0%, rgba(4, 18, 37, .72) 100%); }
+  .hero__media img { object-position: center; }
+  .hero__inner { padding-block: var(--space-13); }
+  .hero__title { max-width: none; }
+  .hero__lead { max-width: none; }
+  .section, .band { padding-block: var(--space-13); }
+  .footer__grid { grid-template-columns: 1fr; }
+  .feature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-7);
+    padding: var(--space-9);
+  }
+  .feature__icon { width: 52px; height: 52px; }
+  .btn { font-size: 14px; padding: var(--space-6) var(--space-9); }
+  .wa-float { width: 56px; height: 56px; right: var(--space-6); bottom: var(--space-6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
