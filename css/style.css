@@ -79,8 +79,23 @@ h1, h2, h3 {
   background: var(--hero-overlay);
 }
 .hero__inner { padding-block: var(--space-14); max-width: 1140px; }
-.hero__logo { display: inline-block; margin-bottom: var(--space-10); }
-.hero__logo img { width: 104px; height: auto; }
+.hero__logo { display: inline-block; margin-bottom: var(--space-10); text-decoration: none; }
+
+/* Wordmark de texto no lugar do logo (hero e rodapé) */
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #fff;
+  line-height: 1;
+  display: inline-block;
+}
+.hero__logo .wordmark {
+  font-size: 1.9rem;
+  padding-bottom: 7px;
+  border-bottom: 3px solid var(--color-accent);
+}
 
 .hero__title {
   color: #fff;
@@ -388,7 +403,7 @@ h1, h2, h3 {
   margin-bottom: var(--space-6);
 }
 .footer p { margin: 0; font-size: 15px; }
-.footer__logo { width: 84px; height: auto; margin-bottom: var(--space-8); }
+.footer__wordmark { font-size: 1.35rem; margin-bottom: var(--space-8); }
 .footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .3); }
 .footer a:hover { border-bottom-color: #fff; }
 .footer__bar { border-top: 1px solid rgba(255, 255, 255, .12); padding-block: var(--space-8); }
