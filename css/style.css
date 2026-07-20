@@ -234,6 +234,8 @@ h1, h2, h3 {
 }
 .card__text { margin: 0 0 var(--space-10); font-size: 15.5px; flex: 1; }
 .card .btn { align-self: center; }
+/* quando há um único serviço, centraliza sem esticar */
+.card:only-child { max-width: 380px; margin-inline: auto; }
 
 /* ---------------- Categorias (linhas largas) ---------------- */
 .features {
