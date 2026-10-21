@@ -35,10 +35,6 @@ Para mudar o número ou a mensagem, troque em todos — é o mesmo link repetido
 
 A página **afirma** estas coisas. Se alguma não for verdade, corrija ou apague:
 
-- **Aferição de pressão, teste de glicemia e aplicação de injetáveis** — a seção de
-  serviços veio da estrutura do site de referência. Confirme que a Santa Mônica
-  oferece os três; se não, apague o `<article class="card">` correspondente e o
-  item no FAQ.
 - **Formas de pagamento** no FAQ (está "Pix, dinheiro e cartões").
 - **Bairros de entrega** — hoje só o Parque Trindade I é real, o resto é
   `[Bairro vizinho 1..5]`. Preencha ou apague o `<ul class="chips">`.
@@ -50,21 +46,9 @@ A página **afirma** estas coisas. Se alguma não for verdade, corrija ou apague
 | Arquivo                   | Proporção | Uso                           | Situação |
 |---------------------------|-----------|-------------------------------|----------|
 | `hero-farmaceutica.webp`  | 1600×1000 | Fundo do hero                 | ✅ definitiva (de `hero (1).png`) |
-| `servico-pressao.webp`    | 600×400   | Card de pressão               | ⚠️ baixada do site de referência |
-| `servico-glicemia.webp`   | 600×400   | Card de glicemia              | ⚠️ baixada do site de referência |
-| `servico-injetaveis.webp` | 600×400   | Card de injetáveis            | ⚠️ baixada do site de referência |
 | `fachada.webp`            | 800×600   | Seção "Sobre"                 | ✅ definitiva (de `faixada.png`) |
 | `logo.webp`               | 300×300   | Logo no hero                  | ✅ definitiva (de `logo-transp.png`) |
 | `logo-branco.webp`        | 260×260   | Logo no rodapé (fundo escuro) | ✅ definitiva (de `logo-transp.png`) |
-
-**Sobre as três imagens de serviço (⚠️):** foram baixadas de
-`drogariamedfarmapalmas.com.br` a pedido. São fotos de banco de imagens que a
-outra farmácia provavelmente licenciou — usá-las no site da Santa Mônica é um
-risco jurídico real (bancos como Shutterstock e Freepik cobram por uso não
-licenciado). O ideal é trocar por fotos próprias da loja, que ainda convertem
-melhor por serem reais. São elas:
-
-- `aferir-pressao.webp`, `teste-de-glicemia.webp`, `aplicacao-de-injetaveis.webp`
 
 O hero tem um degradê escuro da esquerda para a direita — se for trocar, escolha
 uma foto com a pessoa/produto à **direita** do enquadramento.
@@ -80,10 +64,26 @@ Os arquivos originais na raiz (`hero (1).png`, `faixada.png`, `logo.png`,
 `logo-transp.png`) são as fontes que você enviou — já foram convertidos para
 `img/` e podem ser apagados ou guardados como backup.
 
+## Regras de texto (Google Ads)
+
+O site é página de destino de anúncios do Google. A política de Saúde e medicamentos
+do Google Ads permite farmácia no Brasil desde que a página **não promova
+medicamentos de venda sob prescrição**. Por isso, em out/2026 saíram do site:
+
+- qualquer menção a **receita** (aceitar receita, trazer receita, foto da receita);
+- a seção e o FAQ de **aplicação de injetáveis** (e a imagem `servico-injetaveis.webp`);
+- doenças e gratuidade no Farmácia Popular (pressão, diabetes, asma, "gratuitos",
+  "até 90% de desconto");
+- "Peça seus medicamentos" junto de entrega (agora é "faça seu pedido");
+- classes de remédio (analgésicos, antitérmicos) e alegação de "imunidade".
+
+Ao editar o site, **não reintroduza** esses termos, nomes de medicamentos ou
+promessa de tratamento. Na dúvida, fale de "pedido", "atendimento" e "produtos".
+
 ## Notas de implementação
 
 - A seção de categorias usa **linhas de largura total** com ícones de traço em SVG
-  inline (frasco, receita, cápsulas, pote, gota e scooter), seguindo o padrão do
+  inline (frasco, documento, cápsulas, pote, gota e scooter), seguindo o padrão do
   layout de referência. Os ícones são desenhados à mão no próprio HTML — não há
   dependência de fonte de ícones. A espessura do traço é controlada pelo CSS
   (`.feature__icon { stroke-width }`), que vence o atributo do SVG.
